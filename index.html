@@ -8,71 +8,41 @@
 body {
   margin: 0;
   font-family: Arial, sans-serif;
-  background: #f2f2f2;
+  background: #e0f0ff;
+  color: #000;
 }
 .header {
-  background: #000;
+  background: #004aad;
   color: #fff;
   text-align: center;
-  padding: 15px 0;
-  font-size: 24px;
+  padding: 20px 0;
+  font-size: 28px;
   font-weight: bold;
 }
 .container {
-  max-width: 700px;
+  max-width: 800px;
   margin: 20px auto;
 }
 .post {
-  background: #fff;
+  background: #f5faff;
   padding: 15px;
-  margin-bottom: 20px;
-  border-radius: 10px;
+  margin-bottom: 25px;
+  border-radius: 15px;
   box-shadow: 0 4px 8px rgba(0,0,0,0.1);
+  position: relative;
 }
 .post img.logo {
-  height: 40px;
+  height: 50px;
   vertical-align: middle;
   margin-right: 10px;
-}
-.copy-box {
-  display: flex;
-  gap: 10px;
-  margin-top: 10px;
-}
-.copy-box input {
-  flex: 1;
-  padding: 8px;
-  border-radius: 5px;
-  border: 1px solid #ccc;
-}
-.copy-box button {
-  padding: 8px 12px;
-  border: none;
-  border-radius: 5px;
-  background: #ffd700;
-  cursor: pointer;
-}
-.copy-box label {
-  font-weight: bold;
-  margin-right: 5px;
-}
-.video-controls {
-  display: flex;
-  gap: 10px;
-  margin-top: 5px;
-}
-.video-controls button {
-  padding: 5px 10px;
-  border: none;
-  border-radius: 5px;
-  background: #007bff;
-  color: #fff;
-  cursor: pointer;
+  border-radius: 10px;
 }
 .video-container {
   position: relative;
   padding-top: 56.25%;
-  margin-top: 10px;
+  margin-top: 15px;
+  border-radius: 12px;
+  overflow: hidden;
 }
 .video-container video {
   position: absolute;
@@ -80,7 +50,64 @@ body {
   left: 0;
   width: 100%;
   height: 100%;
-  border-radius: 10px;
+  border-radius: 12px;
+  border: 2px solid #004aad;
+}
+.controls {
+  display: flex;
+  gap: 10px;
+  margin-top: 10px;
+}
+.controls button {
+  padding: 8px 12px;
+  border: none;
+  border-radius: 8px;
+  background: #004aad;
+  color: #fff;
+  font-weight: bold;
+  cursor: pointer;
+  transition: transform 0.2s;
+}
+.controls button:hover {
+  transform: scale(1.2);
+}
+.stats {
+  display: flex;
+  gap: 15px;
+  margin-top: 10px;
+}
+.stat-item {
+  display: flex;
+  align-items: center;
+  gap: 5px;
+  cursor: pointer;
+  font-weight: bold;
+}
+.stat-item img {
+  width: 24px;
+  height: 24px;
+  transition: transform 0.2s;
+}
+.stat-item:hover img {
+  transform: scale(1.5);
+}
+.views {
+  color: #004aad;
+  font-weight: bold;
+}
+.visit-site {
+  display: inline-block;
+  margin-top: 10px;
+  padding: 8px 12px;
+  background: #004aad;
+  color: #fff;
+  font-weight: bold;
+  border-radius: 8px;
+  text-decoration: none;
+  transition: transform 0.2s;
+}
+.visit-site:hover {
+  transform: scale(1.1);
 }
 </style>
 </head>
@@ -88,93 +115,71 @@ body {
 <div class="header">PUBG Mobile</div>
 <div class="container">
 
-<!-- المنشور المثبت للموقع الثاني -->
+<!-- منشور MITSBUY -->
 <div class="post">
   <img src="unnamed.webp" class="logo" alt="MITSBUY Logo">
   <span><strong>MITSBUY</strong> - الموقع الرسمي مع خصومات وكوبونات رمضان</span>
-  <div class="copy-box">
-    <label>رابط الموقع:</label>
-    <input type="text" value="https://njmm9762-arch.github.io/PMGC-mostafez-/" readonly id="copyInput">
-    <button onclick="copyText()">نسخ الرابط</button>
-  </div>
-  <p>التفاعل: 12 مليون لايك، 30 مليون مشاهدة، أكثر من 5 مليون مشاركة</p>
+  <a href="https://njmm9762-arch.github.io/PMGC-mostafez-/" class="visit-site" target="_blank">دخول الموقع الرسمي</a>
 </div>
 
 <!-- مثال فيديو 1 -->
 <div class="post">
+  <div class="views">15M مشاهدة</div>
   <div class="video-container">
-    <video id="video1" src="ssstik.io_@d_a_r_k_75_1770055949264.mp4" muted></video>
+    <video id="video1" src="https://example.com/ssstik.io_@d_a_r_k_75_1770055949264.mp4" autoplay muted controls></video>
   </div>
-  <p>وصف الفيديو: لقطات ببجي موبايل المفضلة وضحك وقلوب...</p>
-  <div class="video-controls">
+  <div class="controls">
     <button onclick="toggleMute('video1')">مايك</button>
     <button onclick="toggleFullscreen('video1')">عرض كامل</button>
   </div>
-  <p>عدد اللايكات: 2 مليون | عدد المشاهدات: 15 مليون | التعليقات مؤقتا</p>
+  <div class="stats">
+    <div class="stat-item likes">
+      <img src="https://cdn-icons-png.flaticon.com/512/833/833472.png" alt="Like">
+      <span>2M</span>
+    </div>
+    <div class="stat-item shares">
+      <img src="https://cdn-icons-png.flaticon.com/512/545/545682.png" alt="Share">
+      <span>5M</span>
+    </div>
+  </div>
 </div>
 
 <!-- مثال فيديو 2 -->
 <div class="post">
+  <div class="views">30M مشاهدة</div>
   <div class="video-container">
-    <video id="video2" src="ssstik.io_@zexediting_1770055986169.mp4" muted></video>
+    <video id="video2" src="https://example.com/ssstik.io_@zexediting_1770055986169.mp4" autoplay muted controls></video>
   </div>
-  <p>وصف الفيديو: تعليق الفيديو التعليقات مؤقتا...</p>
-  <div class="video-controls">
+  <div class="controls">
     <button onclick="toggleMute('video2')">مايك</button>
     <button onclick="toggleFullscreen('video2')">عرض كامل</button>
   </div>
-  <p>عدد اللايكات: 4 مليون | عدد المشاهدات: 18 مليون | التعليقات مؤقتا</p>
-</div>
-
-<!-- مثال فيديو 3 -->
-<div class="post">
-  <div class="video-container">
-    <video id="video3" src="ssstik.io_@shah_g_x_live_1770057096837.mp4" muted></video>
+  <div class="stats">
+    <div class="stat-item likes">
+      <img src="https://cdn-icons-png.flaticon.com/512/833/833472.png" alt="Like">
+      <span>4M</span>
+    </div>
+    <div class="stat-item shares">
+      <img src="https://cdn-icons-png.flaticon.com/512/545/545682.png" alt="Share">
+      <span>6M</span>
+    </div>
   </div>
-  <p>وصف الفيديو: مقاطع ممتعة وببجي أكشن...</p>
-  <div class="video-controls">
-    <button onclick="toggleMute('video3')">مايك</button>
-    <button onclick="toggleFullscreen('video3')">عرض كامل</button>
-  </div>
-  <p>عدد اللايكات: 1.125 مليون | عدد المشاهدات: 20 مليون | التعليقات مؤقتا</p>
-</div>
-
-<!-- مثال فيديو 4 -->
-<div class="post">
-  <div class="video-container">
-    <video id="video4" src="ssstik.io_@nonamegirl.pubgm_1770057124282.mp4" muted></video>
-  </div>
-  <p>وصف الفيديو: فيديو أكشن وحركات ممتعة...</p>
-  <div class="video-controls">
-    <button onclick="toggleMute('video4')">مايك</button>
-    <button onclick="toggleFullscreen('video4')">عرض كامل</button>
-  </div>
-  <p>عدد اللايكات: 2.5 مليون | عدد المشاهدات: 25 مليون | التعليقات مؤقتا</p>
 </div>
 
 </div>
 
 <script>
-function copyText() {
-  const copyInput = document.getElementById('copyInput');
-  copyInput.select();
-  copyInput.setSelectionRange(0, 99999);
-  navigator.clipboard.writeText(copyInput.value);
-  alert('تم نسخ الرابط!');
-}
-
 function toggleMute(videoId) {
   const vid = document.getElementById(videoId);
   vid.muted = !vid.muted;
 }
-
 function toggleFullscreen(videoId) {
   const vid = document.getElementById(videoId);
   if (vid.requestFullscreen) {
     vid.requestFullscreen();
-  } else if (vid.webkitRequestFullscreen) { /* Safari */
+  } else if (vid.webkitRequestFullscreen) {
     vid.webkitRequestFullscreen();
-  } else if (vid.msRequestFullscreen) { /* IE11 */
+  } else if (vid.msRequestFullscreen) {
     vid.msRequestFullscreen();
   }
 }
